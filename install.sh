@@ -19,7 +19,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 echo "Downloading powerline compatible font..."
 mkdir -p ~/.fonts
-cd ~/.fonts && { curl -fSLO "https://raw.githubusercontent.com/powerline/fonts/master/Meslo Dotted/Meslo LG M DZ Regular for Powerline.ttf"; cd -; }
+curl -fSLO https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotted/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.ttf --output "~/.fonts/Meslo LG M DZ Regular for Powerline.ttf"
 
 echo "Rebuilding font cache..."
 fc-cache -f 1>/dev/null

@@ -35,7 +35,6 @@ curl -fsSL "https://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.t
 echo "Installing Webstorm $WEBSTORM_VERSION..."
 mkdir -p ~/bin/webstorm
 tar -xzf ~/bin/webstorm.tar.gz -C ~/bin/webstorm --strip-components 1
-~/bin/webstorm/bin/webstorm.sh &
 
 echo "Downloading AnalyseSI..."
 curl -fsSL https://launchpad.net/analysesi/trunk/0.8/+download/AnalyseSI-0.80.jar --output ~/bin/analysesi.jar
@@ -65,10 +64,13 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 echo "Downloading powerline compatible font..."
 mkdir -p ~/.fonts
-curl -fsSLO https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotted/Meslo%20LG%20M%20DZ%20Regular%20fo$
+curl -fsSL https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotted/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.ttf --output ~/.fonts/Meslo\ LG\ M\ DZ\ Regular\ for\ Powerline.ttf
 
 echo "Rebuilding font cache..."
 fc-cache -f 1>/dev/null
+
+echo "Launching Webstorm $WEBSTORM_VERSION..."
+~/bin/webstorm/bin/webstorm.sh &
 
 echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

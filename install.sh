@@ -11,11 +11,6 @@ sudo apt-get upgrade -y 1>/dev/null
 echo "Installing git, curl, zsh and terminator..."
 sudo apt-get install terminator zsh curl git -y 1>/dev/null
 
-echo "Installing Chrome..."
-curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
-sudo dpkg -i ~/bin/chrome.deb
-rm -f ~/bin/chrome.deb
-
 echo "Installing nodejs..."
 curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash - 1>/dev/null
 sudo apt-get install nodejs -y 1>/dev/null
@@ -33,6 +28,13 @@ sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 
 echo "Installing user apps..."
 mkdir -p ~/bin
+
+echo "Downloading Chrome..."
+curl -fsSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
+
+echo "Installing Chrome..."
+sudo dpkg -i ~/bin/chrome.deb
+rm -f ~/bin/chrome.deb
 
 echo "Downloading Webstorm $WEBSTORM_VERSION..."
 curl -fsSL "https://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.tar.gz" --output ~/bin/webstorm.tar.gz

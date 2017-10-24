@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Franz
+Icon=/home/nicolas/bin/Franz/resources/app.asar.unpacked/assets/franz.svg
+Exec=/home/nicolas/bin/Franz/Franz
+Comment=The Universal Messaging App
+Categories=Internet;
+Terminal=false

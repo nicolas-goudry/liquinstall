@@ -23,12 +23,12 @@ Personal linux quick installation script.
 *via `wget`*:
 
 ```shell
-wget --no-check-certificate "https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/install.sh" -O - | bash -s
+wget --no-check-certificate "https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/install.sh" -O - | bash
 ```
 
 *via `curl`*:
 
 ```shell
-curl -L "https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/install.sh" | bash -s
+curl -L "https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/install.sh" | bash
 ```
 

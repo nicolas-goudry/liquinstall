@@ -3,9 +3,10 @@
 WEBSTORM_VERSION=2017.2.5
 NODE_VERSION=6
 YELLOW='\033[1;33m'
+NC='\033[0m'
 
 function ec () {
-  echo -e "${YELLOW}$*"
+  echo -e "${YELLOW}$*${NC}"
 }
 
 ec "Updating distribution dependencies..."

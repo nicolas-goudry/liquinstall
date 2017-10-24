@@ -42,8 +42,6 @@ sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 echo "Installing user apps..."
 mkdir -p ~/bin
 
-WEBSTORM_PID=
-
 echo "Downloading Webstorm $WEBSTORM_VERSION..."
 curl -fSL "https://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.tar.gz" --output ~/bin/webstorm.tar.gz
 
@@ -51,9 +49,6 @@ echo "Installing Webstorm $WEBSTORM_VERSION..."
 mkdir -p ~/bin/webstorm
 tar -xzf ~/bin/webstorm.tar.gz -C ~/bin/webstorm --strip-components 1
 ~/bin/webstorm/bin/webstorm.sh &
-sleep 5
-WEBSTORM_PID=$(ps x -o "%r %c" | grep webstorm | awk '{print $1}')
-kill -TERM -- -$WEBSTORM_PID
 
 echo "Installing AnalyseSI..."
 curl -fSL https://launchpad.net/analysesi/trunk/0.8/+download/AnalyseSI-O.80.jar --output ~/bin/analysesi.jar

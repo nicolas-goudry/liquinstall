@@ -69,6 +69,10 @@ curl -fsSL https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dott
 echo "Rebuilding font cache..."
 fc-cache -f 1>/dev/null
 
+echo "Configuring terminator..."
+mkdir -p ~/.config/terminator
+curl -fsSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/terminator-config --output ~/.config/terminator/config
+
 echo "Launching Webstorm $WEBSTORM_VERSION..."
 ~/bin/webstorm/bin/webstorm.sh &
 

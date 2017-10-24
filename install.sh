@@ -11,6 +11,11 @@ sudo apt-get upgrade -y 1>/dev/null
 echo "Installing git, curl, zsh and terminator..."
 sudo apt-get install terminator zsh curl git -y 1>/dev/null
 
+echo "Installing Chrome..."
+curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
+sudo dpkg -i ~/bin/chrome.deb
+rm -f ~/bin/chrome.deb
+
 echo "Installing nodejs..."
 curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash -s -
 sudo apt-get install nodejs -y 1>/dev/null
@@ -35,6 +40,7 @@ curl -fsSL "https://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.t
 echo "Installing Webstorm $WEBSTORM_VERSION..."
 mkdir -p ~/bin/webstorm
 tar -xzf ~/bin/webstorm.tar.gz -C ~/bin/webstorm --strip-components 1
+rm -f ~/bin/webstorm.tar.gz
 
 echo "Downloading AnalyseSI..."
 curl -fsSL https://launchpad.net/analysesi/trunk/0.8/+download/AnalyseSI-0.80.jar --output ~/bin/analysesi.jar
@@ -44,6 +50,7 @@ curl -fsSL https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_6
 
 echo "Installing exa..."
 unzip -qd ~/bin ~/bin/exa.zip
+rm -f ~/bin/exa.zip
 sudo ln -s ~/bin/exa-linux-x86_64 /usr/bin/exa
 
 echo "Downloading Franz..."
@@ -52,6 +59,7 @@ curl -fsSL https://github.com/meetfranz/franz-app-legacy/releases/download/4.0.4
 echo "Installing Franz..."
 mkdir -p ~/bin/franz
 tar -xzf ~/bin/franz.tgz -C ~/bin/franz --strip-components 1
+rm -f ~/bin/franz.tgz
 mkdir -p ~/.local/share/applications
 curl -fsSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/franz.desktop --output ~/.local/share/applications/franz.desktop
 

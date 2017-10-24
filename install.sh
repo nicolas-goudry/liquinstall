@@ -17,7 +17,7 @@ sudo dpkg -i ~/bin/chrome.deb
 rm -f ~/bin/chrome.deb
 
 echo "Installing nodejs..."
-curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash -s -
+curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash - 1>/dev/null
 sudo apt-get install nodejs -y 1>/dev/null
 
 echo "Fixing npm permissions..."
@@ -63,6 +63,13 @@ rm -f ~/bin/franz.tgz
 mkdir -p ~/.local/share/applications
 curl -fsSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/franz.desktop --output ~/.local/share/applications/franz.desktop
 
+echo "Installing Sublime Text 3..."
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https -y 1>/dev/null
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update 1>/dev/null
+sudo apt-get install sublime-text -y 1>/dev/null
+
 echo "Creating dev dir..."
 mkdir -p ~/dev/osp
 
@@ -80,6 +87,9 @@ fc-cache -f 1>/dev/null
 echo "Configuring terminator..."
 mkdir -p ~/.config/terminator
 curl -fsSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/terminator-config --output ~/.config/terminator/config
+
+echo "Configuring Sublime Text..."
+curl -fsSL https://raw.githubusercontent.com/nicolas-goudry/subl-autoconf/master/install.sh | bash 3
 
 echo "Launching Webstorm $WEBSTORM_VERSION..."
 ~/bin/webstorm/bin/webstorm.sh &

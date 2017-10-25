@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-WEBSTORM_VERSION=2017.2.5
+WEBSTORM_RELEASE=2017.2
+WEBSTORM_VERSION="$WEBSTORM_RELEASE.5"
 NODE_VERSION=6
 YELLOW='\033[1;33m'
 NC='\033[0m'
@@ -107,5 +108,8 @@ ec "Configuring zsh..."
 sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
 chsh -s /bin/zsh
 
-ec "Launching Webstorm $WEBSTORM_VERSION..."
-~/bin/webstorm/bin/webstorm.sh &
+ec "Configuring Webstorm $WEBSTORM_VERSION..."
+mkdir -p "~/.WebStorm$WEBSTORM_RELEASE/config"
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/webstorm-config.tar.gz --output ~/webstorm-config.tar.gz
+tar -xjvf ~/webstorm-config.tar.gz -C ~ --strip-components 2
+# ~/bin/webstorm/bin/webstorm.sh &

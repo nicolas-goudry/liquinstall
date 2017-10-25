@@ -10,12 +10,15 @@ function ec () {
 }
 
 ec "Updating distribution dependencies..."
-
 sudo apt-get update
 sudo apt-get upgrade -y
 
 ec "Installing git, curl, zsh and terminator..."
 sudo apt-get install terminator zsh curl git -y
+
+ec "Installing oh-my-zsh..."
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 ec "Installing nodejs..."
 curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash -
@@ -100,8 +103,9 @@ curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/co
 ec "Configuring Sublime Text..."
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/subl-autoconf/master/install.sh | bash -s 3
 
+ec "Configuring zsh..."
+sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
+chsh -s /bin/zsh
+
 ec "Launching Webstorm $WEBSTORM_VERSION..."
 ~/bin/webstorm/bin/webstorm.sh &
-
-ec "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

@@ -114,10 +114,16 @@ curl -fSL https://raw.githubusercontent.com/nicolas-goudry/subl-autoconf/master/
 
 ec "Configuring zsh..."
 sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
-chsh -s /bin/zsh
+echo 'export DEFAULT_USER=nicolas' >> ~/.zshrc
+echo 'export PATH=$PATH:~/.npm-global/bin' >> ~/.zshrc
+echo 'function mkcd() { mkdir -p "$@" && cd "$_"; }' >> ~/.zshrc
+echo 'alias ls=exa' >> ~/.zshrc
 
 ec "Configuring Webstorm $WEBSTORM_VERSION..."
 mkdir -p "~/.WebStorm$WEBSTORM_RELEASE/config"
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/webstorm-config.tar.gz --output ~/webstorm-config.tar.gz
 tar -xjvf ~/webstorm-config.tar.gz -C ~ --strip-components 2
 # ~/bin/webstorm/bin/webstorm.sh &
+
+ec "Making zsh the default shell..."
+chsh -s $(grep /zsh$ /etc/shells | tail -1)

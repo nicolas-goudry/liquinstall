@@ -76,6 +76,14 @@ rm -f ~/bin/franz.tgz
 mkdir -p ~/.local/share/applications
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/franz.desktop --output ~/.local/share/applications/franz.desktop
 
+ec "Downloading GitKraken..."
+curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb
+
+ec "Installing GitKraken..."
+sudo dpkg -i ~/bin/gitkraken.deb
+sudo apt-get install -fy
+rm -f ~/bin/gitkraken.deb
+
 ec "Installing Sublime Text 3..."
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https -y

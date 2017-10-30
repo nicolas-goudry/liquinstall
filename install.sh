@@ -37,6 +37,7 @@ sudo rm -rf /usr/{bin/npm,lib/node_modules}
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 
 ec "Installing user apps..."
+mkdir -p ~/.local/share/applications
 mkdir -p ~/bin
 
 ec "Downloading Chrome..."
@@ -46,6 +47,15 @@ ec "Installing Chrome..."
 sudo dpkg -i ~/bin/chrome.deb
 sudo apt-get install -fy
 rm -f ~/bin/chrome.deb
+
+ec "Downloading Postman..."
+curl -fSL https://dl.pstmn.io/download/latest/linux64 --output ~/bin/postman.tar.gz
+
+ec "Installing Postman..."
+mkdir -p ~/bin/postman
+tar -xzvf ~/bin/postman.tar.gz -C ~/bin/postman --strip-components 1
+rm -f ~/bin/postman.tar.gz
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/postman.desktop --output ~/.local/share/applications/postman.desktop
 
 ec "Downloading Webstorm $WEBSTORM_VERSION..."
 curl -fSL "https://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.tar.gz" --output ~/bin/webstorm.tar.gz
@@ -73,7 +83,6 @@ ec "Installing Franz..."
 mkdir -p ~/bin/franz
 tar -xzvf ~/bin/franz.tgz -C ~/bin/franz --strip-components 1
 rm -f ~/bin/franz.tgz
-mkdir -p ~/.local/share/applications
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/franz.desktop --output ~/.local/share/applications/franz.desktop
 
 ec "Downloading GitKraken..."

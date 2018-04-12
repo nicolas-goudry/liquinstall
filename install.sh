@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-WEBSTORM_RELEASE=2017.2
-WEBSTORM_VERSION="$WEBSTORM_RELEASE.5"
-NODE_VERSION=6
+WEBSTORM_RELEASE=2018.1
+WEBSTORM_VERSION="$WEBSTORM_RELEASE.1"
+NODE_VERSION=8
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
@@ -77,13 +77,12 @@ rm -f ~/bin/exa.zip
 sudo ln -s ~/bin/exa-linux-x86_64 /usr/bin/exa
 
 ec "Downloading Franz..."
-curl -fSL https://github.com/meetfranz/franz-app-legacy/releases/download/4.0.4/Franz-linux-x64-4.0.4.tgz --output ~/bin/franz.tgz
+curl -fSL https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb --output ~/bin/franz.deb
 
 ec "Installing Franz..."
-mkdir -p ~/bin/franz
-tar -xzvf ~/bin/franz.tgz -C ~/bin/franz --strip-components 1
-rm -f ~/bin/franz.tgz
-curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/shortcuts/franz.desktop --output ~/.local/share/applications/franz.desktop
+sudo dpkg -i ~/bin/gitkraken.deb
+sudo apt-get install -fy
+rm -f ~/bin/gitkraken.deb
 
 ec "Downloading GitKraken..."
 curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb
@@ -135,4 +134,4 @@ tar -xjvf ~/webstorm-config.tar.gz -C ~ --strip-components 2
 # ~/bin/webstorm/bin/webstorm.sh &
 
 ec "Making zsh the default shell..."
-chsh -s $(grep /zsh$ /etc/shells | tail -1)
+chsh -s $(which zsh)

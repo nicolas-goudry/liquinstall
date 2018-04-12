@@ -32,9 +32,10 @@ npm config set prefix "~/.npm-global"
 ec "Upgrading npm..."
 npm i -g npm
 
-ec "Removing old npm and linking new npm..."
-sudo rm -rf /usr/{bin/npm,lib/node_modules}
+ec "Removing old npm/npx and linking new npm/npx..."
+sudo rm -rf /usr/{bin/npm,bin/npx,lib/node_modules}
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
+sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx
 
 ec "Installing user apps..."
 mkdir -p ~/.local/share/applications

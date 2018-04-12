@@ -80,9 +80,9 @@ ec "Downloading Franz..."
 curl -fSL https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb --output ~/bin/franz.deb
 
 ec "Installing Franz..."
-sudo dpkg -i ~/bin/gitkraken.deb
+sudo dpkg -i ~/bin/franz.deb
 sudo apt-get install -fy
-rm -f ~/bin/gitkraken.deb
+rm -f ~/bin/franz.deb
 
 ec "Downloading GitKraken..."
 curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb

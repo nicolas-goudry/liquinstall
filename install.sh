@@ -93,7 +93,7 @@ ec "Installing Insomnia"
 sudo snap install insomnia
 
 ec "Installing kubectl"
-sudo snap install kubectl
+sudo snap install kubectl --classic
 
 ec "Adding Docker sources to apt"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

@@ -31,7 +31,7 @@ mkdir -p ~/.config/terminator
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/terminator-config --output ~/.config/terminator/config
 
 ec "Configuring Git"
-curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.gitconfig --output ~/
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.gitconfig --output ~/.gitconfig
 
 ec "Installing oh-my-zsh (with powerlevel9k theme and compatible font"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -44,7 +44,7 @@ curl -fSL https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotte
 fc-cache -vf
 
 ec "Configuring zsh"
-curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.zprofile --output ~/
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.zprofile --output ~/.zprofile
 echo 'source .zprofile' >> ~/.zshrc
 
 ec "Installing nodejs"

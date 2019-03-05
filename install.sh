@@ -27,6 +27,9 @@ sudo apt-get install -y \
   software-properties-common
 
 ec "Installing oh-my-zsh"
+
+ec "Configuring Git"
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.gitconfig --output ~/
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 touch ~/.zprofile

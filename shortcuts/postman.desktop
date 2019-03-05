@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Postman
-Icon=/home/nicolas/bin/postman/resources/app/assets/icon.png
-Exec=/home/nicolas/bin/postman/Postman
-Comment=Post everything
-Categories=Internet;Programming;
-Terminal=false

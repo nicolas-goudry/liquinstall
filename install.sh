@@ -116,5 +116,8 @@ ec "Installing Docker, VSCode and GCloud SDK"
 sudo apt-get update
 sudo apt-get install -y google-cloud-sdk code docker-ce docker-ce-cli containerd.io
 
+ec "Configuring VSCode"
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/vscode-config --output ~/.config/Code/User/settings.json
+
 ec "Making zsh the default shell"
 chsh -s $(which zsh)

@@ -1,0 +1,16 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.formatOnSave": true,
+    "javascript.validate.enable": false,
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "bounded",
+    "editor.formatOnPaste": true,
+    "window.restoreWindows": "all",
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "standard.autoFixOnSave": true,
+    "standard.usePackageJson": true,
+}

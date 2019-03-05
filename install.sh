@@ -26,13 +26,26 @@ sudo apt-get install -y \
   gnupg-agent \
   software-properties-common
 
-ec "Installing oh-my-zsh"
+ec "Configuring terminator"
+mkdir -p ~/.config/terminator
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/terminator-config --output ~/.config/terminator/config
 
 ec "Configuring Git"
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.gitconfig --output ~/
+
+ec "Installing oh-my-zsh (with powerlevel9k theme and compatible font"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+mkdir -p ~/.oh-my-zsh/custom/themes
+mkdir -p ~/.fonts
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-touch ~/.zprofile
+sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+curl -fSL https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotted/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.ttf --output ~/.fonts/Meslo\ LG\ M\ DZ\ Regular\ for\ Powerline.ttf
+fc-cache -vf
+
+ec "Configuring zsh"
+curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.zprofile --output ~/
+echo 'source .zprofile' >> ~/.zshrc
 
 ec "Installing nodejs"
 curl -fsSL "https://deb.nodesource.com/setup_$NODE_VERSION.x" | sudo -E bash -
@@ -102,25 +115,6 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ec "Installing Docker, VSCode and GCloud SDK"
 sudo apt-get update
 sudo apt-get install -y google-cloud-sdk code docker-ce docker-ce-cli containerd.io
-
-ec "Downloading powerlevel9k theme for oh-my-zsh"
-mkdir -p ~/.oh-my-zsh/custom/themes
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-ec "Downloading powerline compatible font"
-mkdir -p ~/.fonts
-curl -fSL https://raw.githubusercontent.com/powerline/fonts/master/Meslo%20Dotted/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.ttf --output ~/.fonts/Meslo\ LG\ M\ DZ\ Regular\ for\ Powerline.ttf
-
-ec "Rebuilding font cache"
-fc-cache -vf
-
-ec "Configuring terminator"
-mkdir -p ~/.config/terminator
-curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/terminator-config --output ~/.config/terminator/config
-
-ec "Configuring zsh"
-sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="powerlevel9k/powerlevel9k"' ~/.zshrc
-echo 'source .zprofile' >> ~/.zshrc
 
 ec "Making zsh the default shell"
 chsh -s $(which zsh)

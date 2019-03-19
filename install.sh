@@ -91,6 +91,12 @@ rm -rf ~/bin
 ec "Installing Insomnia"
 sudo snap install insomnia
 
+ec "Installing Slack"
+sudo snap install caprine
+
+ec "Installing Caprine"
+sudo snap install caprine
+
 ec "Installing kubectl"
 sudo snap install kubectl --classic
 

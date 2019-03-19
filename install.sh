@@ -71,7 +71,6 @@ ec "Downloading apps"
 mkdir -p ~/bin
 curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
 curl -fSL https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip --output ~/bin/exa.zip
-curl -fSL https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb --output ~/bin/franz.deb
 curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb
 
 ec "Installing Chrome"
@@ -81,10 +80,6 @@ sudo apt-get install -fy
 ec "Installing exa"
 unzip -d ~/bin ~/bin/exa.zip
 sudo mv ~/bin/exa-linux-x86_64 /usr/bin/exa
-
-ec "Installing Franz"
-sudo dpkg -i ~/bin/franz.deb
-sudo apt-get install -fy
 
 ec "Installing GitKraken"
 sudo dpkg -i ~/bin/gitkraken.deb

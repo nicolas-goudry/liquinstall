@@ -124,5 +124,14 @@ sudo apt-get install -y google-cloud-sdk code docker-ce docker-ce-cli containerd
 ec "Configuring VSCode"
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/vscode-config --output ~/.config/Code/User/settings.json
 
+ec "Installing VSCode extensions"
+code --install-extension peterjausovec.vscode-docker
+code --install-extension mikestead.dotenv
+code --install-extension prisma.vscode-graphql
+code --install-extension eg2.vscode-npm-script
+code --install-extension esbenp.prettier-vscode
+code --install-extension chenxsan.vscode-standardjs
+code --install-extension vscode-icons-team.vscode-icons
+
 ec "Making zsh the default shell"
 chsh -s $(which zsh)

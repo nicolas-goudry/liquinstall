@@ -3,7 +3,7 @@
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 120,
     "files.autoSave": "onFocusChange",
     "javascript.validate.enable": false,

@@ -92,6 +92,58 @@ Le script installe et configure également les éléments listés ci-après.
 - [StandardJS - JavaScript Standard Style][codestandard] - _Intégration de `standard`_
 - [vscode-icons][codeicons] - _Pack d’icônes_
 
+### Configurations
+
+#### ZSH
+
+Le thème `powerlevel9k` est installé et un fichier `.zprofile` est créé et sourcé depuis le `.zshrc`. Ce fichier contient les éléments suivants :
+
+- définition de la variable d’environnement `DEFAULT_USER`
+- ajout de `~/.npm-global/bin` au `PATH`
+- remplacement de `ls` par `exa` via un alias
+- alias `k` pour `kubectl`
+- fonction `mkcd` (créé un répertoire et `cd` dedans)
+- fonction `tarpg` pour compresser en gzip avec progression (`tarpg smthgToArk archiveName`)
+- fonction `split_file` et `join_file` pour scinder un fichier compressé en plusieurs parties et le regrouper (`split_file file sizeInMiB` | `join_file file outFile` - `file` doit avoir la même valeur que dans `split_file` pour `join_file`)
+
+#### Terminator
+
+Un profil par défaut est défini :
+
+- style du terminal : texte gris clair sur fond gris/bleu très sombre
+- police par défaut : Meslo for Powerline
+- tampon de défilement : 50000 lignes
+- commande personnalisée : `/bin/zsh`
+
+Des _keybindings_ personnalisés sont également définis pour une utilisation plus facile avec un clavier TypeMatrix en disposition de touches BÉPO.
+
+- `Alt + W` - _Fermer la fenêtre active du terminal_
+- `Maj + Alt + D` - _Scinder le terminal horizontalement_
+- `Alt + D` - _Scinder le terminal verticalement_
+
+#### Visual Studio Code
+
+Voici les paramètres définis :
+
+- sauvegarde automatique à la perte du focus
+- indentation de 2 espaces
+- ne pas afficher les espaces entre les mots
+- retour à la ligne automatique à 120 caractères
+- formattage automatique à la copie et sauvegarde
+- utilisation de `vscode-icons` en tant que pack d’icônes par défaut
+- réouvrir toutes les fenêtres après un redémarrage
+- moteur de rendu `canvas`
+- shell du terminal intégré `zsh`
+- désactivation du crash reporter
+- désactivation de la télémétrie
+- `standard` autofix lors de la sauvegarde
+- `standard` utilise le module du répertoire de travail courant
+- désactivation de la validation JavaScript intégrée (remplacée par l’extension eslint)
+
+#### Git
+
+Tous les lauriers vont à [Christophe Porteneuve](https://delicious-insights.com/fr/articles/configuration-git/) pour ce fichier de configuration Git aux petits oignons !
+
 ## Comment ça fonctionne ?
 
 **Avant d’exécuter le script, il est conseillé d’être déjà authentifié via `sudo` avec l’utilisateur principal de l’environnement final.**

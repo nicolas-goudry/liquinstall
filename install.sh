@@ -72,6 +72,7 @@ mkdir -p ~/bin
 curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
 curl -fSL https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip --output ~/bin/exa.zip
 curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb
+curl -fSL https://github.com/sindresorhus/caprine/releases/download/v2.30.1/caprine-2.30.1-x86_64.AppImage --output ~/bin/caprine.AppImage
 
 ec "Installing Chrome"
 sudo dpkg -i ~/bin/chrome.deb
@@ -85,6 +86,9 @@ ec "Installing GitKraken"
 sudo dpkg -i ~/bin/gitkraken.deb
 sudo apt-get install -fy
 
+ec "Installing Caprine"
+sudo mv ~/bin/caprine.AppImage /usr/bin/caprine
+
 ec "Clean downloaded apps"
 rm -rf ~/bin
 
@@ -92,10 +96,7 @@ ec "Installing Insomnia"
 sudo snap install insomnia
 
 ec "Installing Slack"
-sudo snap install caprine
-
-ec "Installing Caprine"
-sudo snap install caprine
+sudo snap install slack
 
 ec "Installing kubectl"
 sudo snap install kubectl --classic

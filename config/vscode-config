@@ -1,16 +1,19 @@
 {
-    "editor.renderWhitespace": "boundary",
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "javascript.validate.enable": false,
-    "files.autoSave": "onFocusChange",
+    "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
     "editor.wordWrap": "bounded",
-    "editor.formatOnPaste": true,
-    "window.restoreWindows": "all",
+    "editor.wordWrapColumn": 120,
+    "files.autoSave": "onFocusChange",
+    "javascript.validate.enable": false,
+    "standard.autoFixOnSave": true,
+    "standard.usePackageJson": true
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "terminal.integrated.rendererType": "canvas",
     "terminal.integrated.shell.linux": "/bin/zsh",
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "standard.autoFixOnSave": true,
-    "standard.usePackageJson": true,
+    "window.restoreWindows": "all",
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0
 }

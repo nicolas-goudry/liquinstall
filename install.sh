@@ -64,7 +64,10 @@ sudo rm -rf /usr/{bin/npm,bin/npx,lib/node_modules}
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx
 
-ec "Downloading user apps"
+ec "Installing global npm packages"
+npm i -g expo-cli npm-check-updates prettier standard
+
+ec "Downloading apps"
 mkdir -p ~/bin
 curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
 curl -fSL https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip --output ~/bin/exa.zip

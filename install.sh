@@ -24,7 +24,8 @@ sudo apt-get install -y \
   ca-certificates \
   curl \
   gnupg-agent \
-  software-properties-common
+  software-properties-common \
+  build-essential
 
 ec "Configuring terminator"
 mkdir -p ~/.config/terminator

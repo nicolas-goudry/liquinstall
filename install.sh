@@ -15,7 +15,7 @@ ec "Updating distribution dependencies"
 sudo apt-get update
 sudo apt-get upgrade -y
 
-ec "Installing packages (git, curl, zsh, terminator and packages to allow apt to use a repository over HTTPS)"
+ec "Installing packages"
 sudo apt-get install -y \
   terminator \
   zsh \
@@ -33,7 +33,7 @@ curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/co
 ec "Configuring Git"
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/.gitconfig --output ~/.gitconfig
 
-ec "Installing oh-my-zsh (with powerlevel9k theme and compatible font"
+ec "Installing oh-my-zsh"
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 mkdir -p ~/.oh-my-zsh/custom/themes
 mkdir -p ~/.fonts
@@ -58,7 +58,7 @@ npm config set prefix "~/.npm-global"
 ec "Upgrading npm"
 npm i -g npm
 
-ec "Removing old npm/npx and linking new npm/npx"
+ec "Updating npm/npx symlinks in /usr/bin"
 sudo rm -rf /usr/{bin/npm,bin/npx,lib/node_modules}
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx

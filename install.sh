@@ -134,5 +134,5 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension chenxsan.vscode-standardjs
 code --install-extension vscode-icons-team.vscode-icons
 
-ec "Making zsh the default shell"
-chsh -s $(which zsh)
+ec "Make sure clock seconds are displayed"
+gsettings set org.gnome.desktop.interface clock-show-seconds true

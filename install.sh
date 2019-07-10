@@ -103,6 +103,13 @@ sudo apt-get install -fy
 ec "Clean downloaded apps"
 rm -rf ~/bin
 
+ec "Install Redis server"
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+sudo make install
+
 ec "Adding Docker sources to apt"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \

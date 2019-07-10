@@ -5,6 +5,7 @@
 [slack]: https://slack.com
 [caprine]: https://sindresorhus.com/caprine
 [vscode]: https://code.visualstudio.com
+[sqlectron]: https://sqlectron.github.io
 [zsh]: https://www.zsh.org
 [omz]: https://ohmyz.sh
 [git]: https://doc.ubuntu-fr.org/git
@@ -20,6 +21,8 @@
 [kubectl]: https://kubernetes.io/docs/reference/kubectl/overview
 [docker]: https://www.docker.com
 [gcloud]: https://cloud.google.com/sdk
+[openjdk]: https://openjdk.java.net
+[redis]: https://redis.io
 [powerlevel9k]: https://github.com/bhilburn/powerlevel9k
 [powerlinefonts]: https://github.com/powerline/fonts
 [npmfix]: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
@@ -30,6 +33,11 @@
 [codeprettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [codestandard]: https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs
 [codeicons]: https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
+[expo]: https://expo.io
+[ncu]: https://www.npmjs.com/package/npm-check-updates
+[prettier]: https://prettier.io
+[standard]: https://standardjs.com
+[react-native]: https://facebook.github.io/react-native
 
 # liquinstall
 
@@ -57,6 +65,7 @@ Le script installe et configure également les éléments listés ci-après.
 - [Slack][slack] - _Client Slack_
 - [Caprine][caprine] - _Client pour Facebook Messenger_
 - [Visual Studio Code][vscode] - _IDE_
+- [Sqlectron][sqlectron] - _Client SQL_
 
 ### Utilitaires
 
@@ -75,6 +84,8 @@ Le script installe et configure également les éléments listés ci-après.
 - [kubectl][kubectl] - _CLI pour opérer des clusters Kubernetes_
 - [docker][docker] - _Gestion de conteneurs_
 - [gcloud][gcloud] - _Google Cloud SDK_
+- [openjdk][openjdk] - _Java Development Kit_
+- [redis][redis] - _Redis server_
 
 ### Divers
 
@@ -91,6 +102,14 @@ Le script installe et configure également les éléments listés ci-après.
 - [Prettier - Code formatter][codeprettier] - _Intégration de `prettier`_
 - [StandardJS - JavaScript Standard Style][codestandard] - _Intégration de `standard`_
 - [vscode-icons][codeicons] - _Pack d’icônes_
+
+### Paquets NPM
+
+- [expo-cli][expo] - _Flux de développement d'applications React Native_
+- [npm-check-updates][ncu] - _Gestionnaire de mise à jour des paquets npm_
+- [prettier][prettier] - _Formatteur de code_
+- [standard][standard] - _Style de code_
+- [react-native][react-native] - _Bibliothèque pour coder des applications mobiles avec React.js_
 
 ### Configurations
 

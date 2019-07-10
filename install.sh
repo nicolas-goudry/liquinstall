@@ -66,7 +66,7 @@ sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 sudo ln -s ~/.npm-global/lib/node_modules/npm/bin/npx-cli.js /usr/bin/npx
 
 ec "Installing global npm packages"
-npm i -g expo-cli npm-check-updates prettier standard
+npm i -g expo-cli npm-check-updates prettier standard react-native create-react-native-app
 
 ec "Downloading apps"
 mkdir -p ~/bin

@@ -73,7 +73,9 @@ mkdir -p ~/bin
 curl -fSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb --output ~/bin/chrome.deb
 curl -fSL https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip --output ~/bin/exa.zip
 curl -fSL https://release.gitkraken.com/linux/gitkraken-amd64.deb --output ~/bin/gitkraken.deb
-curl -fSL https://github.com/sindresorhus/caprine/releases/download/v2.30.1/caprine-2.30.1-x86_64.AppImage --output ~/bin/caprine.AppImage
+curl -fSL https://github.com/sindresorhus/caprine/releases/download/v2.33.1/caprine-2.33.1-x86_64.AppImage --output ~/bin/caprine.AppImage
+curl -fSL https://github.com/sqlectron/sqlectron-gui/releases/download/v1.30.0/Sqlectron_1.30.0_amd64.deb --output ~/bin/sqlectron.deb
+curl -fSL https://downloads.slack-edge.com/linux_releases/slack-desktop-3.4.2-amd64.deb --output ~/bin/slack.deb
 
 ec "Installing Chrome"
 sudo dpkg -i ~/bin/chrome.deb
@@ -90,17 +92,16 @@ sudo apt-get install -fy
 ec "Installing Caprine"
 sudo mv ~/bin/caprine.AppImage /usr/bin/caprine
 
-ec "Clean downloaded apps"
-rm -rf ~/bin
-
-ec "Installing Insomnia"
-sudo snap install insomnia
+ec "Installing Sqlectron"
+sudo dpkg -i ~/bin/sqlectron.deb
+sudo apt-get install -fy
 
 ec "Installing Slack"
-sudo snap install slack
+sudo dpkg -i ~/bin/slack.deb
+sudo apt-get install -fy
 
-ec "Installing kubectl"
-sudo snap install kubectl --classic
+ec "Clean downloaded apps"
+rm -rf ~/bin
 
 ec "Adding Docker sources to apt"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -119,9 +120,17 @@ CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
-ec "Installing Docker, VSCode and GCloud SDK"
+ec "Adding Insomnia REST sources to apt"
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+
+ec "Adding kubectl sources to apt"
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
+ec "Installing Docker, VSCode, GCloud SDK, Insomnia REST and kubectl"
 sudo apt-get update
-sudo apt-get install -y google-cloud-sdk code docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y google-cloud-sdk code docker-ce docker-ce-cli containerd.io insomnia kubectl
 
 ec "Configuring VSCode"
 curl -fSL https://raw.githubusercontent.com/nicolas-goudry/liquinstall/master/config/vscode-config --output ~/.config/Code/User/settings.json

@@ -25,7 +25,8 @@ sudo apt-get install -y \
   curl \
   gnupg-agent \
   software-properties-common \
-  build-essential
+  build-essential \
+  openjdk-11-jdk
 
 ec "Configuring terminator"
 mkdir -p ~/.config/terminator

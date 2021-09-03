@@ -1,10 +1,20 @@
 export DEFAULT_USER=nicolas
-export PATH=$PATH:~/.npm-global/bin
 
+# Make directory and change directory in one command
 function mkcd() { mkdir -p "$@" && cd "$_"; }
-function tarpg() { tar cf - $1 -P | pv -s $(du -sb $1 | awk '{print $1}') | gzip > $2.tar.gz }
-function split_file() { gzip -c $1 | split -b $2MiB - $1.gz_ }
-function join_file() { cat $1.gz_* | gunzip -c > $2 }
 
+# Useful aliases
 alias ls=exa
+alias l="ls"
+alias ll="ls -la"
 alias k=kubectl
+
+# Load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Set up ZSH pure prompt
+fpath+=$HOME/.zsh/pure
+autoload -Uz promptinit; promptinit
+prompt pure

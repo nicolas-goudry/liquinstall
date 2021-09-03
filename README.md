@@ -1,136 +1,75 @@
-[terminator]: https://doc.ubuntu-fr.org/terminator
-[chrome]: https://www.google.fr/chrome/index.html
-[gitkraken]: https://www.gitkraken.com/git-client
-[insomnia]: https://insomnia.rest
-[slack]: https://slack.com
-[caprine]: https://sindresorhus.com/caprine
-[vscode]: https://code.visualstudio.com
-[sqlectron]: https://sqlectron.github.io
-[zsh]: https://www.zsh.org
-[omz]: https://ohmyz.sh
-[git]: https://doc.ubuntu-fr.org/git
-[curl]: https://curl.haxx.se
-[gnupg]: https://www.gnupg.org
-[node]: https://nodejs.org
-[npm]: https://www.npmjs.com
-[expo]: https://www.npmjs.com/package/expo-cli
-[ncu]: https://www.npmjs.com/package/npm-check-updates
-[prettier]: https://www.npmjs.com/package/prettier
-[standard]: https://www.npmjs.com/package/standard
-[exa]: https://the.exa.website
-[kubectl]: https://kubernetes.io/docs/reference/kubectl/overview
-[docker]: https://www.docker.com
-[gcloud]: https://cloud.google.com/sdk
-[openjdk]: https://openjdk.java.net
-[redis]: https://redis.io
-[powerlevel9k]: https://github.com/bhilburn/powerlevel9k
-[powerlinefonts]: https://github.com/powerline/fonts
-[npmfix]: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
-[codedocker]: https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
-[codedotenv]: https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv
-[codegraphql]: https://marketplace.visualstudio.com/items?itemName=prisma.vscode-graphql
-[codenpm]: https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script
-[codeprettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-[codestandard]: https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs
-[codeicons]: https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
-[expo]: https://expo.io
-[ncu]: https://www.npmjs.com/package/npm-check-updates
-[prettier]: https://prettier.io
-[standard]: https://standardjs.com
-[react-native]: https://facebook.github.io/react-native
-
 # liquinstall
 
-**Ce projet est prévu pour mon usage personnel, il est donc fortement opinioné et devrait le rester.**
+**Ce projet est prévu pour mon usage personnel, il est donc fortement opinioné et le restera.**
 
 Ce projet a pour but d’installer tous les outils et applications représentant un minimum requis pour mon environnement de travail. Il se compose d’un script d’installation et de quelques fichiers de configuration (**li**nux **qui**ck **install**).
 
-Le script d’installation est prévu pour être exécuté sur un environnement Ubuntu récent (18.04 au minimum). Il sera mis à jour lorsque mes besoins et habitudes évolueront.
+Le script d’installation est prévu pour être exécuté sur un environnement Ubuntu récent. Il sera mis à jour lorsque mes besoins et habitudes évolueront.
 
 ## Qu’est-ce que ça fait ?
 
-- désinstallation d’une précédente installation de Docker
-- mise à jour des dépendances de la distribution
-- ajout du support de HTTPS à apt (`apt-transport-https` et `ca-certificates`)
-- installation des `software-properties-common` et `build-essential`
+Mise à jour des dépendances de la distribution est effectuée, installation des paquets « courants » pour le build (`software-properties-common` et `build-essential`) et ajout du support de HTTPS pour `apt` (`apt-transport-https` et `ca-certificates`).
 
-Le script installe et configure également les éléments listés ci-après.
+Le script installe et configure également les applications et utilitaires listés ci-après.
 
 ### Applications
 
-- [terminator][terminator] - _Terminal_
-- [Google Chrome][chrome] - _Navigateur_
-- [GitKraken][gitkraken] - _GUI pour `git`_
-- [Insomnia][insomnia] - _Client HTTP REST_
-- [Slack][slack] - _Client Slack_
-- [Caprine][caprine] - _Client pour Facebook Messenger_
-- [Visual Studio Code][vscode] - _IDE_
-- [Sqlectron][sqlectron] - _Client SQL_
+- [terminator](https://doc.ubuntu-fr.org/terminator) - _Terminal_
+- [Google Chrome](https://www.google.fr/chrome/index.html) - _Navigateur_
+- [Visual Studio Code](https://code.visualstudio.com) - _IDE_
+- [GitKraken](https://www.gitkraken.com/git-client) - _GUI pour `git`_
+- [Sqlectron](https://sqlectron.github.io) - _Client SQL_
+- [Lens](https://k8slens.dev/) - _Kubernetes IDE_
 
 ### Utilitaires
 
-- [zsh][zsh] - _Remplacement de `bash`_
-- [oh-my-zsh][omz] - _Plugins et thèmes pour `zsh`_
-- [git][git] - _git everything_
-- [curl][curl] - _HTTP FTW_
-- [gnupg-agent][gnupg] - _Chiffrement_
-- [node.js][node] - _Environnement d’exécution JavaScript_
-- [npm][npm] - _Gestionnaire de paquet pour `node.js`_
-- [expo][expo] - _CLI pour expo_
-- [ncu][ncu] - _Gestionnaire de mise à jour des paquets `npm`_
-- [prettier][prettier] - _Formatteur de code_
-- [standard][standard] - _Configuration_
-- [exa][exa] - _Remplacement de `ls`_
-- [kubectl][kubectl] - _CLI pour opérer des clusters Kubernetes_
-- [docker][docker] - _Gestion de conteneurs_
-- [gcloud][gcloud] - _Google Cloud SDK_
-- [openjdk][openjdk] - _Java Development Kit_
-- [redis][redis] - _Redis server_
-
-### Divers
-
-- [powerlevel9k][powerlevel9k] - _Thème `zsh`_
-- [Meslo][powerlinefonts] - _`powerlevel9k` requiert une police compatible Powerline_
-- [Correction des permissions `npm`][npmfix] - _Évite d’avoir à utiliser `sudo` pour installer des paquets globaux_
+- [zsh](https://www.zsh.org) - _Shell_
+- [oh-my-zsh](https://ohmyz.sh) - _Plugins et thèmes pour `zsh`_
+- [git](https://doc.ubuntu-fr.org/git) - _Contrôle de version_
+- [curl](https://curl.haxx.se) - _HTTP FTW_
+- [gnupg](https://www.gnupg.org) - _Chiffrement_
+- [exa](https://the.exa.website) - _Remplacement de `ls`_
+- [docker](https://www.docker.com) - _Gestion de conteneurs_
+- [gcloud](https://cloud.google.com/sdk) - _CLI pour opérer Google Cloud_
+- [aws](https://aws.amazon.com/fr/cli) - _CLI pour opérer AWS_
+- [kubectl](https://kubernetes.io/docs/reference/kubectl/overview) - _CLI pour opérer des clusters Kubernetes_
+- [openjdk](https://adoptium.net) - _Java Development Kit_
+- [nvm](https://github.com/nvm-sh/nvm) - _Gestionnaire de versions pour `node.js`_
+- [node.js](https://nodejs.org) - _Environnement d’exécution JavaScript_
+- [npm](https://www.npmjs.com) - _Gestionnaire de paquet pour `node.js`_
 
 ### Extensions Visual Studio Code
 
-- [Docker][codedocker] - _Coloration syntaxique pour Dockerfile_
-- [DotENV][codedotenv] - _Coloration syntaxique pour .dotenv_
-- [GraphQL][codegraphql] - _Coloration syntaxique pour le langage GraphQL_
-- [npm][codenpm] - _Support de `npm`_
-- [Prettier - Code formatter][codeprettier] - _Intégration de `prettier`_
-- [StandardJS - JavaScript Standard Style][codestandard] - _Intégration de `standard`_
-- [vscode-icons][codeicons] - _Pack d’icônes_
+- [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - _Support des fichiers Dockerfile_
+- [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - _Support des fichiers .env_
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - _Support complet du markdown avec prévisualisation_
+- [StandardJS - JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs) - _Intégration de `standard`_
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) - _Pack d’icônes_
 
 ### Paquets NPM
 
-- [expo-cli][expo] - _Flux de développement d'applications React Native_
-- [npm-check-updates][ncu] - _Gestionnaire de mise à jour des paquets npm_
-- [prettier][prettier] - _Formatteur de code_
-- [standard][standard] - _Style de code_
-- [react-native][react-native] - _Bibliothèque pour coder des applications mobiles avec React.js_
+- [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) - _Gestionnaire de mise à jour des paquets `npm`_
+- [standard](https://standardjs.com) - _Style de code JS_
+- [yarn](https://yarnpkg.com/) - _Gestionnaire de paquet alternatif pour `node.js`_
 
 ### Configurations
 
 #### ZSH
 
-Le thème `powerlevel9k` est installé et un fichier `.zprofile` est créé et sourcé depuis le `.zshrc`. Ce fichier contient les éléments suivants :
+Un fichier `.zprofile` est créé et sourcé depuis le `.zshrc`. Ce fichier contient les éléments suivants :
 
 - définition de la variable d’environnement `DEFAULT_USER`
-- ajout de `~/.npm-global/bin` au `PATH`
 - remplacement de `ls` par `exa` via un alias
 - alias `k` pour `kubectl`
 - fonction `mkcd` (créé un répertoire et `cd` dedans)
-- fonction `tarpg` pour compresser en gzip avec progression (`tarpg smthgToArk archiveName`)
-- fonction `split_file` et `join_file` pour scinder un fichier compressé en plusieurs parties et le regrouper (`split_file file sizeInMiB` | `join_file file outFile` - `file` doit avoir la même valeur que dans `split_file` pour `join_file`)
+- chargement automatique de `nvm`
+- configuration du prompt [`pure`](https://github.com/sindresorhus/pure)
 
 #### Terminator
 
 Un profil par défaut est défini :
 
 - style du terminal : texte gris clair sur fond gris/bleu très sombre
-- police par défaut : Meslo for Powerline
 - tampon de défilement : 50000 lignes
 - commande personnalisée : `/bin/zsh`
 
@@ -151,8 +90,7 @@ Voici les paramètres définis :
 - formattage automatique à la copie et sauvegarde
 - utilisation de `vscode-icons` en tant que pack d’icônes par défaut
 - réouvrir toutes les fenêtres après un redémarrage
-- moteur de rendu `canvas`
-- shell du terminal intégré `zsh`
+- shell du terminal linux intégré `zsh`
 - désactivation du crash reporter
 - désactivation de la télémétrie
 - `standard` autofix lors de la sauvegarde
@@ -161,11 +99,9 @@ Voici les paramètres définis :
 
 #### Git
 
-Tous les lauriers vont à [Christophe Porteneuve](https://delicious-insights.com/fr/articles/configuration-git/) pour ce fichier de configuration Git aux petits oignons !
+Tous les lauriers vont à [Christophe Porteneuve](https://twitter.com/porteneuve) pour ce [fichier de configuration Git aux petits oignons](https://delicious-insights.com/fr/articles/configuration-git) !
 
 ## Comment ça fonctionne ?
-
-**Avant d’exécuter le script, il est conseillé d’être déjà authentifié via `sudo` avec l’utilisateur principal de l’environnement final.**
 
 Deux méthodes sont possibles pour exécuter le script :
 
